@@ -1,0 +1,205 @@
+:host {
+    padding: 10px;
+}
+
+.player {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    padding: 24px;
+    border-radius: 16px;
+    background:
+        linear-gradient(145deg, #4a3327, #2f1e17), // кирпичные стены / обгоревший пергамент
+        repeating-radial-gradient(circle at center, rgba(180, 130, 80, 0.05) 0 2px, transparent 2px 6px); // потертости/старение
+    border: 3px solid #6b4c32; // потёртая бронза
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.5); // тень для глубины
+    color: #f4e1b9;
+
+    &__name {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #d4b27a; // старое золото / потертость
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
+    }
+
+    &__money {
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #c17c1a; // бронза / монеты
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right,
+            transparent,
+            #6b4c32,
+            #a67c52,
+            #6b4c32,
+            transparent);
+    margin: 16px 0;
+}
+
+.adding-soldiers {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    background: linear-gradient(145deg, #3e2c2a, #2b1f1c); // тёмный пергамент/обожжённый
+    border: 2px solid #7d4f2a; // потёртая бронза
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
+    &__select {
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 2px solid #6b4c32;
+        background: linear-gradient(to bottom, #5a3e2b, #3b2a20); // потертая кожа/картон
+        color: #f4e1b9; // цвет пергамента
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        min-width: 120px;
+
+        &:hover {
+            background: linear-gradient(to bottom, #634631, #412f22);
+        }
+    }
+
+    option {
+        background-color: #3b2a20;
+        color: #f4e1b9;
+        font-weight: normal;
+    }
+
+    &__btn {
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: none;
+        background: linear-gradient(145deg, #8b4f2a, #5a2f1b); // обожжённая бронза/кирпич
+        color: #f4e1b9;
+        font-weight: bold;
+        cursor: pointer;
+        text-shadow: 0 0 1px #000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+        transition: all 0.2s ease-in-out;
+
+        &:hover:not(:disabled) {
+            box-shadow: 0 0 15px rgba(255, 140, 0, 0.7); // огненный отблеск
+            transform: scale(1.05);
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+
+    &__cost {
+        padding: 0;
+        color: #f4e1b9;
+        text-shadow: 0 0 1px #000;
+    }
+}
+
+// :host {
+//     padding: 10px
+// }
+
+// .player {
+//     display: flex;
+//     flex-direction: row;
+//     gap: 100px;
+//     padding: 24px;
+//     border-radius: 16px;
+//     background: radial-gradient(circle at top left, #2b2b2b, #1a1a1a),
+//         repeating-radial-gradient(circle at center, rgba(255, 215, 0, 0.05) 0 2px, transparent 2px 6px);
+//     border: 3px solid #ffd700;
+//     box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+//     color: #fff;
+
+//     &__name {
+//         font-weight: bold;
+//         font-size: 1.2rem;
+//         color: #ffd700;
+//         text-shadow: 0 0 3px rgba(255, 215, 0, 0.7);
+//     }
+
+//     &__money {
+//         font-weight: bold;
+//         font-size: 1.1rem;
+//         color: #ffa500;
+//         text-shadow: 0 0 2px rgba(255, 215, 0, 0.7);
+//         display: flex;
+//         align-items: center;
+//         gap: 4px;
+//     }
+
+// }
+
+// .adding-soldiers {
+//     display: flex;
+//     gap: 12px;
+//     align-items: center;
+//     padding: 12px;
+//     background: radial-gradient(circle at top left, #2b2b2b, #1a1a1a);
+//     border: 2px solid #ffd700;
+//     border-radius: 12px;
+//     box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+
+//     &__select {
+//         padding: 8px 12px;
+//         border-radius: 8px;
+//         border: 2px solid #ffd700;
+//         background: linear-gradient(to bottom, #3c3c3c, #1e1e1e);
+//         color: #ffd700;
+//         font-weight: bold;
+//         cursor: pointer;
+//         transition: all 0.2s ease-in-out;
+//         min-width: 120px;
+
+//         &:hover {
+//             background: linear-gradient(to bottom, #444, #2c2c2c);
+//         }
+//     }
+
+//     option {
+//         background-color: #2b2b2b;
+//         color: #ffd700;
+//         font-weight: normal;
+//         border-radius: 12px;
+//     }
+
+//     &__btn {
+//         padding: 10px 16px;
+//         border-radius: 10px;
+//         border: none;
+//         background: linear-gradient(145deg, #ffd700, #ffa500);
+//         color: #1a1a1a;
+//         font-weight: bold;
+//         cursor: pointer;
+//         text-shadow: 0 0 2px #fff;
+//         box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+//         transition: all 0.2s ease-in-out;
+
+//         &:hover:not(:disabled) {
+//             box-shadow: 0 0 20px rgba(255, 223, 0, 0.9);
+//         }
+
+//         &:disabled {
+//             opacity: 0.5;
+//             cursor: not-allowed;
+//         }
+//     }
+
+//     &__cost {
+//         margin: 0;
+//         color: #ffd700;
+//         text-shadow: 0 0 2px #fff;
+//     }
+// }

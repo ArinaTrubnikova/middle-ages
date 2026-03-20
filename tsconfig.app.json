@@ -8,7 +8,7 @@
   },
   "include": [
     "src/**/*.ts"
-  ],
+, "src/app/components/abstract-fabric"  ],
   "exclude": [
     "src/**/*.spec.ts"
   ]

@@ -1,7 +1,7 @@
-import { Component, inject, Input, output } from "@angular/core";
+import { Component, Input, output } from "@angular/core";
 import { UnitFactory } from '../fabrics/unit-factory'
 // import { CHARACTER_OPTIONS, CharacterType, ELEMENT_OPTIONS, ElementType } from "../../models/types/type";
-import { FormsModule, FormGroup, Validators, FormControl, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Hero } from "../hero/hero";
 // import { BackService } from "../../services/back.service";
 
@@ -13,7 +13,7 @@ import { Hero } from "../hero/hero";
     imports: [FormsModule, ReactiveFormsModule]
 })
 export class Army {
-    fabric: UnitFactory = inject(UnitFactory);
+    fabric: UnitFactory = new UnitFactory();
     // backService: BackService = inject(BackService);
 
     @Input() army: Hero[] = [];

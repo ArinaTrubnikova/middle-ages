@@ -3,11 +3,6 @@ import { Elf } from "../elf/elf";
 import { Warrior } from "../warrior/warrior";
 import { CharacterType } from "../../models/types/type";
 import { ElementType } from "../../models/types/type";
-import { Injectable } from "@angular/core";
-
-@Injectable({
-    providedIn: 'root',
-})
 
 export class UnitFactory {
     instance = new Map();

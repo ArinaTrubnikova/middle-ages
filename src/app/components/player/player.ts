@@ -5,21 +5,24 @@ import { CHARACTER_OPTIONS, ELEMENT_OPTIONS, CharacterType, ElementType } from '
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UnitFactory } from '../fabrics/unit-factory';
 import { BackService } from '../../services/back.service';
+import { RouterLink, Router } from "@angular/router";
+import { Battlefield } from '../battlefield/battlefield';
 
 @Component({
   selector: 'app-player',
-  imports: [Army, ReactiveFormsModule],
+  imports: [Army, ReactiveFormsModule, RouterLink, Battlefield],
   templateUrl: './player.html',
   styleUrl: './player.scss',
 })
 export class PlayerInfo {
-  fabric: UnitFactory = inject(UnitFactory);
+  fabric: UnitFactory = new UnitFactory();
   backService: BackService = inject(BackService);
 
   playerName = 'Jhonny Cage';
   money = 100;
   myArmy: Hero[] = [];
   cost!: number | undefined;
+  router = inject(Router);
 
   characters = CHARACTER_OPTIONS;
   types = ELEMENT_OPTIONS;
@@ -27,6 +30,7 @@ export class PlayerInfo {
     character: new FormControl<CharacterType | null>(null, Validators.required),
     type: new FormControl<ElementType | null>(null),
   });
+
 
   ngOnInit() {
     this.selectForm.valueChanges.subscribe(res => {

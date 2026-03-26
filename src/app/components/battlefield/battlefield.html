@@ -1,0 +1,7 @@
+<div class="board">
+  @for (cell of cells; track $index; let i = $index) {
+    <div class="cell">
+      <span>{{ cell.soldiers ? `${cell.soldiers[i].name} ${cell.soldiers[i].type}` : null }}</span>
+    </div>
+  }
+</div>

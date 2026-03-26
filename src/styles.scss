@@ -14,11 +14,11 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Garamond', Georgia, serif; // более старинный шрифт
-    color: #f4e1b9; // цвет пергамента
+    font-family: 'Garamond', Georgia, serif;
+    color: #f4e1b9;
     background:
-        linear-gradient(145deg, #4a3327, #2f1e17), // кирпич/обожжённый пергамент
-        repeating-radial-gradient(circle at center, rgba(180, 130, 80, 0.03) 0 2px, transparent 2px 6px); // потертости и пятна
+        linear-gradient(145deg, #4a3327, #2f1e17),
+        repeating-radial-gradient(circle at center, rgba(180, 130, 80, 0.03) 0 2px, transparent 2px 6px);
     background-blend-mode: overlay;
     background-size: cover;
 }

@@ -4,31 +4,41 @@
 </div>
 <hr />
 
-<form class="adding-soldiers" [formGroup]="selectForm">
-  <select class="adding-soldiers__select" formControlName="character">
-    @for (option of characters; track option.value) {
-      <option [value]="option.value">{{ option.label }}</option>
+@if (router.url.startsWith('/battlefield')) {
+  <app-battlefield [armyForBattle]="myArmy"></app-battlefield>
+}
+
+@if (!router.url.startsWith('/battlefield')) {
+  <form class="adding-soldiers" [formGroup]="selectForm">
+    <select class="adding-soldiers__select" formControlName="character">
+      @for (option of characters; track option.value) {
+        <option [value]="option.value">{{ option.label }}</option>
+      }
+    </select>
+
+    <select class="adding-soldiers__select" formControlName="type">
+      @for (option of types; track option.value) {
+        <option [value]="option.value">{{ option.label }}</option>
+      }
+    </select>
+
+    <button
+      class="adding-soldiers__btn"
+      (click)="
+        addSoldiers(
+          selectForm.get('character')?.value ?? null,
+          selectForm.get('type')?.value ?? null
+        )
+      "
+      [disabled]="!this.money || (this.cost ?? 0) > this.money || selectForm.invalid"
+    >
+      Добавить солдата
+    </button>
+    @if (cost) {
+      <p class="adding-soldiers__cost">Стоимость персонажа: {{ cost }} $</p>
     }
-  </select>
+  </form>
 
-  <select class="adding-soldiers__select" formControlName="type">
-    @for (option of types; track option.value) {
-      <option [value]="option.value">{{ option.label }}</option>
-    }
-  </select>
-
-  <button
-    class="adding-soldiers__btn"
-    (click)="
-      addSoldiers(selectForm.get('character')?.value ?? null, selectForm.get('type')?.value ?? null)
-    "
-    [disabled]="!this.money || (this.cost ?? 0) > this.money || selectForm.invalid"
-  >
-    Добавить солдата
-  </button>
-  @if (cost) {
-    <p class="adding-soldiers__cost">Стоимость персонажа: {{ cost }} $</p>
-  }
-</form>
-
-<app-army [army]="myArmy" [cost]="cost" (isSoldiersBought)="getMoneyForSale($event)"></app-army>
+  <app-army [army]="myArmy" [cost]="cost" (isSoldiersBought)="getMoneyForSale($event)"></app-army>
+  <button class="go-to-battle" routerLink="/battlefield">Начать битву</button>
+}

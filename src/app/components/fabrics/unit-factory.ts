@@ -30,7 +30,6 @@ export class UnitFactory {
         if (!this.instance.has(key)) {
             this.setInstance(character, type);
         }
-
         return this.instance.get(character);
     }
 }

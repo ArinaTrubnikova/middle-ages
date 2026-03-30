@@ -49,12 +49,12 @@ export class PlayerInfo {
       return;
     }
     this.myArmy.push(this.fabric.getInstance(character, type));
-    this.payForSoldiers()
+    this.payForSoldiers();
   }
 
   payForSoldiers() {
     if (this.cost) {
-      this.money = this.money - this.cost;
+      this.money -= this.cost;
     }
   }
 

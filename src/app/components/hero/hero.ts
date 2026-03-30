@@ -7,6 +7,9 @@ export class Hero {
         public canFly = false,
         public type = '',
         public cost = 10,
+        public x = 0,
+        public y = 0,
+        public selected = false,
     ) { }
 
     clone(): Hero {
@@ -16,7 +19,12 @@ export class Hero {
         );
     }
 
-    move() { }
+    move(xBoard: number, yBoard: number) {
+        if (this.selected) {
+            this.x = xBoard;
+            this.y = yBoard;
+        }
+    }
 
     attack() { }
 }

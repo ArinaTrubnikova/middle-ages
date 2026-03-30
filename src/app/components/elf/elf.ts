@@ -42,10 +42,6 @@ export class Elf extends Hero {
         }
     }
 
-    public getBow() {
-        console.log(`${this.type} bow ${this.damage} dmg`);
-    }
-
     private createElfAir() {
         this.type = 'air';
         this.canFly = true;

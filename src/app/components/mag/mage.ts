@@ -22,10 +22,6 @@ export class Mage extends Hero {
         this.cost *= 0.6;
     }
 
-    public getBall() {
-        console.log(`${this.type} ball ${this.damage} dmg`);
-    }
-
     private addElement(type: ElementType | null) {
         switch (type) {
             case 'air':

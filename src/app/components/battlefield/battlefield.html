@@ -1,7 +1,9 @@
 <div class="board">
-  @for (cell of cells; track $index; let i = $index) {
-    <div class="cell">
-      <span>{{ cell.soldiers ? `${cell.soldiers[i].name} ${cell.soldiers[i].type}` : null }}</span>
-    </div>
+  @for (row of board; track $index; let y = $index) {
+    @for (column of row; track $index; let x = $index) {
+      <div class="cell" (click)="moveHeroAtBoard(x, y)">
+        {{ getHeroAt(x, y)?.name || '' }}
+      </div>
+    }
   }
 </div>

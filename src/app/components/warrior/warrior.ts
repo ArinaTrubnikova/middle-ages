@@ -42,9 +42,6 @@ export class Warrior extends Hero {
                 break;
         }
     }
-    public getSword() {
-        console.log(`${this.type} sword ${this.damage} dmg`);
-    }
 
     private createWarriorAir() {
         this.type = 'air';

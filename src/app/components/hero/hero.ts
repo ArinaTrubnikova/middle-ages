@@ -26,5 +26,9 @@ export class Hero {
         }
     }
 
-    attack() { }
+    attack(hp: number) {
+        if (this.hp < hp) {
+            alert('you are dead')
+        }
+    }
 }

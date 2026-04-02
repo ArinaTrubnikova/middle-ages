@@ -1,8 +1,8 @@
 <div class="board">
   @for (row of board; track $index; let y = $index) {
-    @for (column of row; track $index; let x = $index) {
-      <div class="cell" (click)="moveHeroAtBoard(x, y)">
-        {{ getHeroAt(x, y)?.name || '' }}
+    @for (cell of row; track $index; let x = $index) {
+      <div [ngClass]="getType(cell)" (click)="moveHeroAtBoard(x, y)">
+        {{ cell.hero?.name || null }}
       </div>
     }
   }

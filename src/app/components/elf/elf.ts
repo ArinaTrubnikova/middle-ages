@@ -18,7 +18,7 @@ export class Elf extends Hero {
         this.hp *= 1.3;
         this.armor *= 1.3;
         this.damage *= 1.1;
-        this.name = 'Elf 🏹';
+        this.name = 'ЭЛЬФ 🏹';
         this.cost *= 0.8;
     }
 

@@ -18,7 +18,7 @@ export class Mage extends Hero {
         this.hp *= 1.2;
         this.armor *= 0.8;
         this.damage *= 1.2;
-        this.name = 'Mage 🧙‍♂️';
+        this.name = 'МАГ 🧙‍♂️';
         this.cost *= 0.6;
     }
 

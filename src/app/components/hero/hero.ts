@@ -27,9 +27,8 @@ export class Hero {
     }
 
     attack(damage: number) {
-        if (this.hp <= damage) {
-            console.log('you are dead');
-            return;
+        if (this.hp <= 0) {
+            alert(`${this.name} is dead: ${this.hp} low hp`)
         }
         this.hp -= damage;
     }

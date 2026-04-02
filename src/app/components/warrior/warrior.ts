@@ -19,7 +19,7 @@ export class Warrior extends Hero {
         this.hp *= 1.4;
         this.armor *= 1.2;
         this.damage *= 1.5;
-        this.name = 'Warrior 🗡️';
+        this.name = 'ВОИН 🗡️';
         this.cost *= 0.7;
     }
 

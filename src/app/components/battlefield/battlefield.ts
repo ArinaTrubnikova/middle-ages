@@ -96,8 +96,7 @@ export class Battlefield {
   }
 
   attackEnemy(targetHero: Hero, myHero: Hero) {
-    const hp = targetHero.hp - myHero.damage;
-    targetHero.attack(hp);
-
+    const damage = myHero.damage;
+    targetHero.attack(damage);
   }
 }

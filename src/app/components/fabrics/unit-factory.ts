@@ -3,6 +3,9 @@ import { Elf } from "../elf/elf";
 import { Warrior } from "../warrior/warrior";
 import { CharacterType } from "../../models/types/type";
 import { ElementType } from "../../models/types/type";
+import { Injectable } from "@angular/core";
+
+@Injectable({ providedIn: 'root' })
 
 export class UnitFactory {
     instance = new Map();
@@ -11,13 +14,13 @@ export class UnitFactory {
         let hero;
         switch (character) {
             case 'mage':
-                hero = this.instance.set(character, new Mage(type))
+                hero = new Mage(type);
                 break;
             case 'elf':
-                hero = this.instance.set(character, new Elf(type));
+                hero = new Elf(type);
                 break;
             case 'warrior':
-                hero = this.instance.set(character, new Warrior(type));
+                hero = new Warrior(type);
                 break;
         }
         const key = `${character}_${type}`;
@@ -30,6 +33,6 @@ export class UnitFactory {
         if (!this.instance.has(key)) {
             this.setInstance(character, type);
         }
-        return this.instance.get(character);
+        return this.instance.get(key);
     }
 }

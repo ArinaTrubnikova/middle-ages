@@ -15,7 +15,7 @@ import { Battlefield } from '../battlefield/battlefield';
   styleUrl: './player.scss',
 })
 export class PlayerInfo {
-  fabric: UnitFactory = new UnitFactory();
+  fabric: UnitFactory = inject(UnitFactory);
   backService: BackService = inject(BackService);
 
   playerName = 'Jhonny Cage';
@@ -30,7 +30,6 @@ export class PlayerInfo {
     character: new FormControl<CharacterType | null>(null, Validators.required),
     type: new FormControl<ElementType | null>(null),
   });
-
 
   ngOnInit() {
     this.selectForm.valueChanges.subscribe(res => {

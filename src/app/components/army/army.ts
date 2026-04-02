@@ -1,4 +1,4 @@
-import { Component, Input, output } from "@angular/core";
+import { Component, inject, Input, output } from "@angular/core";
 import { UnitFactory } from '../fabrics/unit-factory'
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Hero } from "../hero/hero";
@@ -11,7 +11,7 @@ import { Hero } from "../hero/hero";
     imports: [FormsModule, ReactiveFormsModule]
 })
 export class Army {
-    fabric: UnitFactory = new UnitFactory();
+    fabric: UnitFactory = inject(UnitFactory);
 
     @Input() army: Hero[] = [];
     @Input() cost!: number | undefined;
